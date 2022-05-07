@@ -1,1 +1,1 @@
-export * from './lib/demo-lib.module';
+export * from './login';
