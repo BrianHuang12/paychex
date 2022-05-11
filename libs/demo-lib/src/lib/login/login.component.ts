@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AuthService } from '../auth';
 
 @Component({
   selector: 'paychex-login',
@@ -7,7 +8,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  search = "";
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 }
