@@ -1,8 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "data": "libs/data",
     "demo": "apps/demo",
     "demo-e2e": "apps/demo-e2e",
-    "demo-lib": "libs/demo-lib"
+    "demo-lib": "libs/demo-lib",
+    "demo-server": "apps/demo-server"
   }
 }

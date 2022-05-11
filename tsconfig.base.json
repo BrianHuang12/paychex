@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@paychex/data": ["libs/data/src/index.ts"],
       "@paychex/demo-lib/*": ["libs/demo-lib/src/lib/*"]
     }
   },
