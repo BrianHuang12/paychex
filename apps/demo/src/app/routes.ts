@@ -7,6 +7,7 @@ export const DEMO_ROUTES: Routes = [
     component: ShellLayoutComponent,
     canActivate: [AuthGuard],
     path: '',
+    loadChildren: () => import('@paychex/demo-lib/dashboard').then(m => m.DashboardComponentModule)
   },
   {
     path: 'login',

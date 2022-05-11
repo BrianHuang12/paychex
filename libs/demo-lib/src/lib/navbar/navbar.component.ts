@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthService } from '../auth';
 
 @Component({
   selector: 'paychex-navbar',
@@ -11,12 +12,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   onLogout(): void {
-
+    this.authService.logout();
   }
 }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
 import { AuthService } from '../auth';
 
 @Component({
@@ -9,7 +11,16 @@ import { AuthService } from '../auth';
 })
 export class LoginComponent implements OnInit {
   search = "";
-  constructor(private authService: AuthService) {}
+  loginForm = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required],
+  })
+  constructor(private authService: AuthService, private fb: FormBuilder) {}
 
   ngOnInit(): void {}
+
+  login(): void {
+    console.log(this.loginForm.get('username')?.value)
+    this.authService.login(this.loginForm.get('username')?.value, this.loginForm.get('password')?.value)
+  }
 }

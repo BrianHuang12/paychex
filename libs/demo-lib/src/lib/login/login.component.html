@@ -70,22 +70,18 @@
       <p>{{search}}</p>
     </header>
     <section>
-      <form fxLayout="column">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="column">
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
-        <input matInput name="search">
+        <input matInput name="search" formControlName="username">
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput>
+        <input matInput formControlName="password">
       </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Login</button>
 
       </form>
     </section>
-    <footer fxLayout="row" fxLayoutAlign="space-between center">
-      <a href="" title="Forgot Password">Forgot Password?</a>
-      <a href="" title="Register">Register</a>
-    </footer>
-    <button mat-raised-button color="primary">Login</button>
   </section>
 </section>

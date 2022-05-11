@@ -2,6 +2,7 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavbarComponentModule } from '../navbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @Component({
   selector: 'paychex-shell-layout',
@@ -15,7 +16,7 @@ export class ShellLayoutComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule, RouterModule, NavbarComponentModule],
+  imports: [CommonModule, FlexLayoutModule, RouterModule, NavbarComponentModule],
   declarations: [ShellLayoutComponent],
   exports: [ShellLayoutComponent],
 })

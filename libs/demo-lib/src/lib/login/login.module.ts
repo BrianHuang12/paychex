@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, MatButtonModule, MatInputModule, MatFormFieldModule, FlexLayoutModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, MatButtonModule, MatInputModule, MatFormFieldModule, FlexLayoutModule, ReactiveFormsModule, RouterModule.forChild(routes)],
   declarations: [LoginComponent],
   exports: [LoginComponent]
 })
