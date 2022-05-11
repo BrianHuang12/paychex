@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@paychex/demo-lib/*": ["libs/demo-lib/src/*"]
+      "@paychex/demo-lib/*": ["libs/demo-lib/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
