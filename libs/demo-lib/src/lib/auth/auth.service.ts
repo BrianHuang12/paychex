@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, InjectionToken } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, first, Observable, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, first, Observable } from 'rxjs';
 
 export const AUTH_SERVICE_TOKEN = new InjectionToken<AuthService>('AUTH_SERVICE_TOKEN');
 

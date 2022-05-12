@@ -21,7 +21,7 @@
         y2="0.86"
       >
         <stop offset="0" stop-color="rgb(88,62,213)" stop-opacity="1" />
-        <stop offset="1" stop-color="rgb(23,215,250)" stop-opacity="1" />
+        <stop offset="1" stop-color="#673ab7" stop-opacity="1" />
       </linearGradient>
     </defs>
     <g opacity="1">
@@ -49,8 +49,8 @@
         d="M896,448 C1142.6325445712241,465.5747656464056 695.2579309733121,896 448,896 C200.74206902668806,896 5.684341886080802e-14,695.2579309733121 0,448.0000000000001 C0,200.74206902668806 200.74206902668791,5.684341886080802e-14 447.99999999999994,0 C695.2579309733121,0 475,418 896,448Z"
       />
       <linearGradient id="linearGradient-3" x1="0.5" y1="0" x2="0.5" y2="1">
-        <stop offset="0" stop-color="rgb(40,175,240)" stop-opacity="1" />
-        <stop offset="1" stop-color="rgb(18,15,196)" stop-opacity="1" />
+        <stop offset="0" stop-color="#673ab7" stop-opacity="1" />
+        <stop offset="1" stop-color="rgb(88,62,213)" stop-opacity="1" />
       </linearGradient>
     </defs>
     <g opacity="1">
@@ -67,7 +67,6 @@
     <header>
       <h1>Sign in</h1>
       <p>Sign in and manage your time!</p>
-      <p>{{search}}</p>
     </header>
     <section>
       <form [formGroup]="loginForm" (ngSubmit)="login()" fxLayout="column">
@@ -77,7 +76,7 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput formControlName="password">
+        <input matInput formControlName="password" [type]="'password'">
       </mat-form-field>
     <button mat-raised-button type="submit" color="primary">Login</button>
 

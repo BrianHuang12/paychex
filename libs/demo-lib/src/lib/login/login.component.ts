@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
 import { AuthService } from '../auth';
 
 @Component({
@@ -10,7 +9,6 @@ import { AuthService } from '../auth';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
-  search = "";
   loginForm = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
