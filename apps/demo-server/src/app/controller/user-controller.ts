@@ -11,7 +11,7 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
       })
     } else {
       res.status(401).json({
-        err: 'Your username or password was incorrect please string again'
+        err: 'Your username or password was incorrect please try again.'
       })
     }
     next();

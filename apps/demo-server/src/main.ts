@@ -88,7 +88,9 @@ app.post('/api/users/:id/break', (req, res, next) => {
               if (idx > -1) {
                 user.timeCharge[idx].breaks.push(new Break());
                 user.save().catch(err => console.log(err)).then(user => {
-                  res.sendStatus(200);
+                  res.status(200).json({
+                    message: 'Sucessfully started your break'
+                  });
 
                 })
               }
@@ -139,16 +141,18 @@ app.patch('/api/users/:id/break', (req, res, next) => {
               if (idx > -1 && hasOpenBreak > -1) {
                 user.timeCharge[idx].breaks[hasOpenBreak].endDate = new Date(Date.now());
                 user.save().catch(err => console.log(err)).then(user => {
-                  res.sendStatus(200);
+                  res.status(200).json({message: 'Succesfully ended your break.'});
                   return;
                 })
               } else {
                 res.status(500).json({err: 'Something went wrong trying to close your break.'});
+                return;
 
               }
             }
           } else {
             res.sendStatus(404);
+            return;
           }
         }
       }
@@ -167,7 +171,12 @@ app.patch('/api/users/:id/timecharge', (req, res, next) => {
         // find the open timecharging session
         const openTimecharging = user.timeCharge.findIndex(time => !time.closedDate);
         if (openTimecharging > -1) {
-          user.timeCharge[openTimecharging].closedDate = new Date(Date.now());
+          const date = new Date(Date.now());
+          user.timeCharge[openTimecharging].closedDate = date;
+          const openBreakIdx = user.timeCharge[openTimecharging].breaks?.findIndex(b => !b.endDate);
+          if (openBreakIdx !== undefined && openBreakIdx > -1) {
+            user.timeCharge[openTimecharging].breaks[openBreakIdx].endDate = date;
+          }
           user
             .save()
             .catch((err) => console.log(err))
