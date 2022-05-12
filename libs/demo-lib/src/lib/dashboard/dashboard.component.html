@@ -1,5 +1,7 @@
-<button mat-button (click)="startShift()">Start a Shift</button>
-<button mat-button (click)="startBreak()">Start a Break</button>
+<button mat-button color="primary" (click)="startShift()">Start a Shift</button>
+<button mat-button color="primary" (click)="startBreak()">Start a Break</button>
+<button mat-button color="primary" (click)="endShift()">End a Shift</button>
+<button mat-button color="primary" (click)="endBreak()">End a Break</button>
 <div *ngIf="(data$ | async) as test">
   <!-- <p>{{test.email}}</p>
   <div *ngFor="let t of test.timeCharge">
